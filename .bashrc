@@ -22,7 +22,8 @@ function theme () {
 	if [ -z "$1" ]; then
 		ls -1 ~/Pictures/wp
 	else
-		wal -q -i ~/Pictures/wp/$1 -a 85 --backend colorz > /dev/null 2>&1;
+		wal -q -n -i ~/Pictures/wp/$1 -a 100 --backend colorz > /dev/null 2>&1;
+        feh --bg-tile ~/Pictures/wp/$1
 	fi
 }
 
