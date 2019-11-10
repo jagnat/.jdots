@@ -191,6 +191,19 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+mode "gaps" {
+        bindsym $left       gaps outer current plus 10
+        bindsym $right      gaps outer current minus 10
+
+        bindsym $down       gaps inner current plus 10
+        bindsym $up         gaps inner current minus 10
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+g mode "gaps"
+
 bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id $HOME/.config/i3/launch_polybar.sh &
