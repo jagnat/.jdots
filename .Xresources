@@ -1,6 +1,7 @@
 
-urxvt.font: xft:Inconsolata:size=13
+urxvt.font: xft:Fantasque Sans Mono:size=12
 urxvt.scrollBar: false
+urxvt.saveLines: 10000
 
 Xft.lcdfilter: lcddefault
 Xft.antialias: true

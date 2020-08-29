@@ -10,13 +10,6 @@ cat ~/.cache/wal/sequences
 alias ls='ls --color=auto'
 alias ..='cd ..'
 alias jdot='git --git-dir=$HOME/.jdots/ --work-tree=$HOME'
-# alias wwussh='ssh -p 922 nataraj@linux.cs.wwu.edu'
-
-function wwussh () {
-    if [ ! -z "$1" ]; then
-        ssh -p 922 nataraj@linux-$1.cs.wwu.edu
-    fi
-}
 
 function theme () {
 	if [ -z "$1" ]; then
@@ -37,5 +30,5 @@ PS1='[\u@\h \W]\$ '
 LADSPA_PATH=/usr/lib/ladspa
 export LADSPA_PATH
 
-export PATH="/home/jagnat/hc:/home/jagnat/.local/thumb/bin:/home/jagnat/.local/bin:/home/jagnat/blitz:/home/jagnat/.local/riscv/bin:$PATH"
+export PATH="/home/jagnat/.local/thumb/bin:/home/jagnat/.local/bin:/home/jagnat/.local/riscv/bin:$PATH"
 
