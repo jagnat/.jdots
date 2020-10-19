@@ -8,7 +8,7 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:background:#222}
+background = ${env:bg_alpha:#222}
 background-alt = ${xrdb:background:#222}
 foreground = ${xrdb:foreground:#222}
 foreground-alt = ${xrdb:foreground:#222}
@@ -42,10 +42,10 @@ module-margin-left = 1
 module-margin-right = 2
 
 #font-0 = fixed:pixelsize=10;1
-font-0 = Fantasque Sans Mono:size=12;3
-font-1 = Symbola:size=14;5
+font-0 = "Fantasque Sans Mono:size=12;3"
+font-1 = "FantasqueSansMono Nerd Font Mono:style=Regular:size=24;7"
 #font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;2
+#font-2 = "siji:pixelsize=54;3"
 
 modules-left = i3
 modules-center = 
@@ -192,7 +192,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 format-underline = 
@@ -201,7 +201,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 format-underline =
@@ -209,7 +209,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp5s0
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -263,16 +263,16 @@ format-prefix-foreground = ${colors.foreground-alt}
 label = %date%, %time%
 
 [module/volume]
-type = internal/pulseaudio
+type = internal/alsa
 interval = 1
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 🔊  
+label-volume =  
 label-volume-foreground = ${colors.foreground}
 
-format-muted-prefix = " "
+#format-muted-prefix = ""
 format-muted-foreground = ${colors.foreground-alt}
-label-muted =  	🔇 muted
+label-muted =   muted
 
 bar-volume-width = 16
 bar-volume-foreground-0 = ${colors.foreground}
@@ -303,18 +303,21 @@ format-charging-underline =
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -332,9 +335,9 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
