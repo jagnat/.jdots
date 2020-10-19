@@ -215,6 +215,9 @@ exec_always --no-startup-id $HOME/.config/i3/launch_polybar.sh &
 
 exec compton -c &
 
+exec_always $HOME/.config/i3/reload_wal.sh
+exec_always $HOME/.config/i3/set_redshift.sh
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)

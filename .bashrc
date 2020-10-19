@@ -16,12 +16,19 @@ function theme () {
 		ls -1 ~/Pictures/wp
 	else
 		wal -q -n -i ~/Pictures/wp/$1 --backend colorz > /dev/null 2>&1;
-        feh --bg-tile ~/Pictures/wp/$1
+        if [ "-t" = "$2" ]; then
+            feh --bg-tile ~/Pictures/wp/$1 > /dev/null
+            echo "tile" > ~/.cache/wal/mode
+        else
+            feh --bg-fill ~/Pictures/wp/$1
+            echo "scale" > ~/.cache/wal/mode > /dev/null
+        fi
 	fi
 }
 
 function flux () {
     redshift -PO $1
+    echo $1 > ~/.cache/heattemp.txt
 }
 
 
